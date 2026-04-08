@@ -3,6 +3,7 @@
 ## Thành viên
 - Nguyễn Danh Quang - 23010230
 - Dương Kim Chi - 23010831
+- Nguyễn Thị Lan Anh - 23010823
 
 ## Nội dung
 - Tạo repo GitHub
@@ -10,4 +11,4 @@
 - Hiển thị thông tin nhóm
 
 ## Hình ảnh
-![2f43054d-c209-4c3d-9cca-662544e30ef2](https://github.com/user-attachments/assets/a5e4d6a5-74d3-44ee-8095-e8d4f40bef80)
+![35149f19-91c3-44b8-adbd-771b8a826038](https://github.com/user-attachments/assets/0a928bdb-27fc-4ee7-86c5-f409406e6e13)
