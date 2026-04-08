@@ -1,21 +1,13 @@
-<<<<<<< HEAD
-# ProjectName_Quang_-_Chi_N03_1_2026
-=======
-# my_app
+# Ứng dụng sinh tồn
 
-A new Flutter project.
+## Thành viên
+- Nguyễn Danh Quang - 23010230
+- Dương Kim Chi - 23010831
 
-## Getting Started
+## Nội dung
+- Tạo repo GitHub
+- Tạo project Flutter
+- Hiển thị thông tin nhóm
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
->>>>>>> a93a374 (Initial flutter project)
+## Hình ảnh
+![87ffea73-170e-4039-933c-d59ca7933cef](https://github.com/user-attachments/assets/c8234346-4b9f-4eaf-a9cd-0d8f02de340e)
