@@ -10,4 +10,4 @@
 - Hiển thị thông tin nhóm
 
 ## Hình ảnh
-![87ffea73-170e-4039-933c-d59ca7933cef](https://github.com/user-attachments/assets/8d56b4cf-495e-47c5-b61f-e3415995501b)
+![2f43054d-c209-4c3d-9cca-662544e30ef2](https://github.com/user-attachments/assets/a5e4d6a5-74d3-44ee-8095-e8d4f40bef80)
