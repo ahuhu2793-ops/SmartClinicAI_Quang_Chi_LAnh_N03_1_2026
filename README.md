@@ -1,4 +1,5 @@
-# Ứng dụng sinh tồn
+# SmartClinicAI
+ỨNG DỤNG QUẢN LÝ PHÒNG KHÁM THÔNG MINH TÍCH HỢP AI
 
 ## Thành viên
 - Nguyễn Danh Quang - 23010230
