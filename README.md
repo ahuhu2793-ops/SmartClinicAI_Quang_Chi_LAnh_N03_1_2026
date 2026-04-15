@@ -12,8 +12,8 @@ Tránh sai sót trong quản lý
 Tăng hiệu quả vận hành
 Dễ dàng mở rộng và tích hợp
 ## Công nghệ sử dụng
-Frontend
-- Flutter (Dart)
+- Frontend
+Flutter (Dart)
 Kiến trúc: Clean Architecture
 - Backend
 REST API (Spring Boot)
@@ -36,7 +36,7 @@ Quản lý bệnh nhân
 Đặt lịch khám
 Tạo hóa đơn
 Thanh toán
-  * Patient (Bệnh nhân)
+* Patient (Bệnh nhân)
 Đăng ký lịch khám
 Xem lịch hẹn
 Xem lịch sử khám
