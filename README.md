@@ -41,29 +41,29 @@ Thanh toán
 Xem lịch hẹn
 Xem lịch sử khám
 ## Chức năng chính
-# Quản lý bác sĩ
+### Quản lý bác sĩ
 CRUD thông tin bác sĩ
 Quản lý chuyên môn
 Theo dõi lịch làm việc
 Thống kê hiệu suất
-# Quản lý bệnh nhân & bệnh án
+### Quản lý bệnh nhân & bệnh án
 Lưu trữ hồ sơ bệnh nhân
 Theo dõi lịch sử khám
 Quản lý bệnh án theo từng lần khám
 Theo dõi tình trạng từng răng
-# Quản lý lịch hẹn
+### Quản lý lịch hẹn
 Đặt lịch khám theo bác sĩ
 Kiểm tra trùng lịch
 Nhắc lịch khám
-# Quản lý dịch vụ
+### Quản lý dịch vụ
 Danh sách dịch vụ (trám răng, nhổ răng, tẩy trắng,...)
 Cấu hình giá dịch vụ
-# Thanh toán & hóa đơn
+### Thanh toán & hóa đơn
 Tạo hóa đơn
 Thêm nhiều dịch vụ vào hóa đơn
 Tính tổng tiền tự động
 Lưu lịch sử thanh toán
-# Báo cáo & thống kê
+### Báo cáo & thống kê
 Doanh thu theo ngày/tháng
 Số lượng bệnh nhân
 Hiệu suất bác sĩ
