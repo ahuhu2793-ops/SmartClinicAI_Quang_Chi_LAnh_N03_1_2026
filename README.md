@@ -7,63 +7,63 @@ Hệ thống Quản lý phòng khám thông minh tích hợp AI là ứng dụng
 - Dương Kim Chi - 23010831
 - Nguyễn Thị Lan Anh - 23010823
 ## Mục tiêu
-Giảm thao tác thủ công
-Tránh sai sót trong quản lý
-Tăng hiệu quả vận hành
-Dễ dàng mở rộng và tích hợp
+- Giảm thao tác thủ công
+- Tránh sai sót trong quản lý
+- Tăng hiệu quả vận hành
+- Dễ dàng mở rộng và tích hợp
 ## Công nghệ sử dụng
-- Frontend
+* Frontend
 Flutter (Dart)
-Kiến trúc: Clean Architecture
-- Backend
-REST API (Spring Boot)
-Xác thực: JWT (JSON Web Token)
-Phân quyền: RBAC (Role-Based Access Control)
-- Database
-MySQL
+- Kiến trúc: Clean Architecture
+* Backend
+- REST API (Spring Boot)
+- Xác thực: JWT (JSON Web Token)
+- Phân quyền: RBAC (Role-Based Access Control)
+* Database
+- MySQL
 ## Các đối tượng trong hệ thống
 * Admin
-Quản lý bác sĩ
-Quản lý dịch vụ và giá
-Xem báo cáo, thống kê
-Xem và tính lương bác sĩ
+- Quản lý bác sĩ
+- Quản lý dịch vụ và giá
+- Xem báo cáo, thống kê
+- Xem và tính lương bác sĩ
 * Doctor (Bác sĩ)
-Xem lịch khám
-Cập nhật bệnh án
-Ghi nhận dịch vụ đã thực hiện
+- Xem lịch khám
+- Cập nhật bệnh án
+- Ghi nhận dịch vụ đã thực hiện
 * Receptionist (Lễ tân)
-Quản lý bệnh nhân
-Đặt lịch khám
-Tạo hóa đơn
-Thanh toán
+- Quản lý bệnh nhân
+- Đặt lịch khám
+- Tạo hóa đơn
+- Thanh toán
 * Patient (Bệnh nhân)
-Đăng ký lịch khám
-Xem lịch hẹn
-Xem lịch sử khám
+- Đăng ký lịch khám
+- Xem lịch hẹn
+- Xem lịch sử khám
 ## Chức năng chính
 ### Quản lý bác sĩ
-CRUD thông tin bác sĩ
-Quản lý chuyên môn
-Theo dõi lịch làm việc
-Thống kê hiệu suất
+- CRUD thông tin bác sĩ
+- Quản lý chuyên môn
+- Theo dõi lịch làm việc
+- Thống kê hiệu suất
 ### Quản lý bệnh nhân & bệnh án
-Lưu trữ hồ sơ bệnh nhân
-Theo dõi lịch sử khám
-Quản lý bệnh án theo từng lần khám
-Theo dõi tình trạng từng răng
+- Lưu trữ hồ sơ bệnh nhân
+- Theo dõi lịch sử khám
+- Quản lý bệnh án theo từng lần khám
+- Theo dõi tình trạng từng răng
 ### Quản lý lịch hẹn
-Đặt lịch khám theo bác sĩ
-Kiểm tra trùng lịch
-Nhắc lịch khám
+- Đặt lịch khám theo bác sĩ
+- Kiểm tra trùng lịch
+- Nhắc lịch khám
 ### Quản lý dịch vụ
-Danh sách dịch vụ (trám răng, nhổ răng, tẩy trắng,...)
-Cấu hình giá dịch vụ
+- Danh sách dịch vụ 
+- Cấu hình giá dịch vụ
 ### Thanh toán & hóa đơn
-Tạo hóa đơn
-Thêm nhiều dịch vụ vào hóa đơn
-Tính tổng tiền tự động
-Lưu lịch sử thanh toán
+- Tạo hóa đơn
+- Thêm nhiều dịch vụ vào hóa đơn
+- Tính tổng tiền tự động
+- Lưu lịch sử thanh toán
 ### Báo cáo & thống kê
-Doanh thu theo ngày/tháng
-Số lượng bệnh nhân
-Hiệu suất bác sĩ
+- Doanh thu theo ngày/tháng
+- Số lượng bệnh nhân
+- Hiệu suất bác sĩ
