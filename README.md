@@ -1,6 +1,7 @@
 # SmartClinicAI
 ỨNG DỤNG QUẢN LÝ PHÒNG KHÁM THÔNG MINH TÍCH HỢP AI
-Hệ thống Quản lý Phòng khám Nha khoa là một ứng dụng fullstack giúp số hóa toàn bộ quy trình vận hành của phòng khám, từ quản lý bệnh nhân, bác sĩ, lịch hẹn đến bệnh án, dịch vụ và thanh toán.
+
+Hệ thống Quản lý phòng khám thông minh tích hợp AI là ứng dụng giúp số hóa toàn bộ quy trình vận hành của phòng khám, từ quản lý bệnh nhân, bác sĩ, lịch hẹn đến bệnh án, dịch vụ và thanh toán.
 ## Thành viên
 - Nguyễn Danh Quang - 23010230
 - Dương Kim Chi - 23010831
@@ -49,7 +50,7 @@ Thống kê hiệu suất
 Lưu trữ hồ sơ bệnh nhân
 Theo dõi lịch sử khám
 Quản lý bệnh án theo từng lần khám
-Theo dõi tình trạng từng răng (1–32)
+Theo dõi tình trạng từng răng
 # Quản lý lịch hẹn
 Đặt lịch khám theo bác sĩ
 Kiểm tra trùng lịch
