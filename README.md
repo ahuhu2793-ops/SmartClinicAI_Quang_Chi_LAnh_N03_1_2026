@@ -1,88 +1,129 @@
-# CLINIC AI MANAGER
+# 🦷 Dental Clinic Management System
 
-## BAI TAP THUC HANH SO 02 - NHOM 03
+Hệ thống quản lý phòng khám nha khoa được xây dựng bằng Dart nhằm hỗ trợ quản lý bệnh nhân, lịch hẹn, bác sĩ và các dịch vụ nha khoa một cách hiệu quả.
 
-## 1. Mô tả bài thực hành
-Sinh viên có thể làm việc theo nhóm hoặc cá nhân dựa trên nội dung bài tập nhóm.
-Đề tài thực hiện: CLINIC AI MANAGER.
+## 👥 Thành viên & Phân công công việc
 
-Mục tiêu bài thực hành số 2:
-- Sử dụng biến trong file main.dart.
-- Sử dụng Collections (Array, List, Map) để quản lý dữ liệu đối tượng.
-- Hiển thị dữ liệu Collections trên giao diện Flutter trong hàm build.
+| Họ và tên | MSSV | Vai trò | Đóng góp |
+|---|---|---|---|
+| Nguyễn Danh quang | 23010230 | Leader / Developer | Phân tích yêu cầu hệ thống, thiết kế giao diện và phát triển chức năng quản lý bệnh nhân |
+| Nguyễn Thị Lan Anh | 23010845 | Backend Developer | Thiết kế cơ sở dữ liệu, xử lý logic hệ thống và kết nối dữ liệu |
+| Dương Kim Chi | 23010831  | Frontend Developer | Xây dựng giao diện Flutter/Dart và tối ưu trải nghiệm người dùng |
 
-## 2. Thông tin nhóm
-- Lớp: N03 - Đại học Phenikaa
-- Đề tài: CLINIC AI MANAGER
+## 📌 Giới thiệu
 
-Thành viên:
-1. Chi
-2. Quang
-3. Anh
+Ứng dụng giúp phòng khám nha khoa:
+- Quản lý thông tin bệnh nhân
+- Đặt và theo dõi lịch hẹn
+- Quản lý bác sĩ và nhân viên
+- Theo dõi hồ sơ khám bệnh
+- Quản lý dịch vụ và hóa đơn
+- Hỗ trợ thống kê doanh thu
 
-## 3. Yêu cầu bài thực hành và cách thực hiện
 
-3.1. Sử dụng biến trong main.dart
+## 🚀 Công nghệ sử dụng
 
-Trong main.dart đã khai báo các biến mô tả bối cảnh phòng khám và đối tượng liên quan:
-- tenPhongKham
-- nhomThucHien
-- idBacSi
-- tenBacSi
-- chuyenKhoa
-- phongLamViec
+- Dart
+- Flutter
+- SQLite / MySQL
+- Provider / Riverpod
+- REST API
 
-Ý nghĩa:
-- Nhóm biến String dùng để mô tả tên phòng khám, tên bác sĩ, chuyên khoa.
-- Biến int dùng để định danh đối tượng (ví dụ idBacSi).
 
-3.2. Sử dụng Collections (Map, List)
+## 📂 Cấu trúc dự án
 
-Map đối tượng đơn:
-- thongTinBenhNhan gồm các key: id, tenBenhNhan, tinhTrang, chanDoanAI.
+```bash
+lib/
+│
+├── models/          
+├── services/        
+├── screens/         
+├── widgets/         
+├── database/        
+├── utils/           
+└── main.dart        
+```
 
-List các Map:
-- listLichKhambenh là danh sách các phiếu dịch vụ/lịch khám.
-- Mỗi phần tử gồm các trường: idPhieu, dichVu, soLuong, phong, gioHen.
+## ⚙️ Chức năng chính
 
-Nội dung này tương ứng yêu cầu đề bài về listNguoiMuon và listSach, nhưng đã được điều chỉnh theo bối cảnh quản lý phòng khám.
+### 👨‍⚕️ Quản lý bác sĩ
+- Thêm / sửa / xóa bác sĩ
+- Quản lý chuyên môn
+- Theo dõi lịch làm việc
 
-3.3. Hiển thị dữ liệu trong Widget build
+### 🧑‍💼 Quản lý bệnh nhân
+- Lưu thông tin cá nhân
+- Quản lý lịch sử khám bệnh
+- Theo dõi tình trạng điều trị
 
-Đã hiển thị 02 danh sách/chòm dữ liệu trên giao diện:
-- Thông tin bệnh nhân: hiển thị bằng Text và Row trong một khối Container.
-- Danh sách lịch khám: hiển thị theo dạng hàng (Row) gồm header và các dòng dữ liệu tạo từ List.
+### 📅 Quản lý lịch hẹn
+- Đặt lịch khám
+- Kiểm tra lịch trống
+- Nhắc lịch hẹn
 
-Kết quả:
-- Dữ liệu Collections được render trực tiếp lên màn hình.
-- Đáp ứng yêu cầu hiển thị bằng Row hoặc Text.
+### 💳 Thanh toán & hóa đơn
+- Tạo hóa đơn dịch vụ
+- Quản lý chi phí điều trị
+- Thống kê doanh thu
 
-## 4. Cấu trúc file liên quan
-- lib/main.dart: Chứa toàn bộ biến, collections và giao diện hiển thị theo yêu cầu bài 2.
-- pubspec.yaml: Cấu hình dependency và môi trường Dart/Flutter.
-- README.md: Tài liệu mô tả bài thực hành.
+### 📊 Báo cáo thống kê
+- Tổng số bệnh nhân
+- Doanh thu theo tháng
+- Dịch vụ được sử dụng nhiều nhất
 
-## 5. Hướng dẫn chạy dự án
-Bước 1: Cài dependency
+
+## 🛠️ Cài đặt dự án
+
+### Clone project
+
+```bash
+git clone https://github.com/your-username/dental-clinic-management.git
+```
+
+### Cài dependencies
+
+```bash
+dart pub get
+```
+
+Hoặc:
+
+```bash
 flutter pub get
+```
 
-Bước 2: Kiểm tra thiết bị
-flutter devices
+### Chạy ứng dụng
 
-Bước 3: Chạy ứng dụng
+```bash
+dart run
+```
+
+Hoặc:
+
+```bash
 flutter run
+```
 
-Nếu cần chỉ định thiết bị:
-flutter run -d ten_thiet_bi
 
-## 6. Đánh giá kết quả bài tập
-- Đã sử dụng biến trong main.dart.
-- Đã sử dụng Collections gồm Map và List cho đối tượng dữ liệu.
-- Đã hiển thị 02 khối dữ liệu trên giao diện bằng Row/Text.
-- Hoàn thành đúng trọng tâm yêu cầu Bài tập thực hành số 02.
+## 🔒 Phân quyền người dùng
 
-## 7. Hướng phát triển tiếp
-- Tách đối tượng thành model riêng (BenhNhan, LichKham).
-- Đưa dữ liệu từ giả lập sang dữ liệu động (form nhập liệu).
-- Bổ sung chức năng tìm kiếm và lọc lịch khám.
-- Tích hợp trang chi tiết cho từng bệnh nhân.
+| Vai trò | Quyền |
+|---|---|
+| Admin | Quản lý toàn hệ thống |
+| Doctor | Quản lý khám bệnh |
+| Receptionist | Đặt lịch và tiếp nhận |
+| Patient | Xem lịch hẹn |
+
+
+## 📈 Hướng phát triển
+
+- Tích hợp AI hỗ trợ chẩn đoán
+- Đặt lịch online
+- Gửi thông báo tự động
+- Đồng bộ dữ liệu cloud
+- Xuất PDF hóa đơn
+
+
+
+
+
