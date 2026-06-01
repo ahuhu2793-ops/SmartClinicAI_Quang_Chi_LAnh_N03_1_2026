@@ -7,7 +7,7 @@ Hệ thống quản lý phòng khám nha khoa được xây dựng bằng Dart n
 | Họ và tên | MSSV | Vai trò | Đóng góp |
 |---|---|---|---|
 | Nguyễn Danh quang | 23010230 | Leader / Developer | Phân tích yêu cầu hệ thống, thiết kế giao diện và phát triển chức năng quản lý bệnh nhân |
-| Nguyễn Thị Lan Anh | 23010845 | Backend Developer | Thiết kế cơ sở dữ liệu, xử lý logic hệ thống và kết nối dữ liệu |
+| Nguyễn Thị Lan Anh | 23010823 | Backend Developer | Thiết kế cơ sở dữ liệu, xử lý logic hệ thống và kết nối dữ liệu |
 | Dương Kim Chi | 23010831  | Frontend Developer | Xây dựng giao diện Flutter/Dart và tối ưu trải nghiệm người dùng |
 
 ## 📌 Giới thiệu
