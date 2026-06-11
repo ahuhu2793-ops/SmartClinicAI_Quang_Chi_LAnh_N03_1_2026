@@ -1,53 +1,165 @@
 class Appointment {
-  String id;
+  final String id;
+  String appointmentCode;
   String patientId;
-  String doctorId;
+  String source;
+  String patientName;
+  String? phone;
+  String? doctorId;
+  String? doctorName;
+  String? serviceId;
+  String? serviceName;
   DateTime appointmentDate;
-  String reason;    
-  String status;
-  String note; 
+  String appointmentTime;
+  String? notes;
+  String status; // 'pending', 'confirmed', 'in_progress', 'completed', 'cancelled'
+  // registrationSource removed; use `source` instead
+  DateTime createdAt;
+  DateTime updatedAt;
+  bool confirmed;
+
   Appointment({
     required this.id,
+    required this.appointmentCode,
     required this.patientId,
-    required this.doctorId,
+    required this.patientName,
+    this.phone,
+    this.doctorId,
+    this.doctorName,
+    this.serviceId,
+    this.serviceName,
     required this.appointmentDate,
-    required this.reason,
-    this.status = "Pending",
-    this.note = "",
+    required this.appointmentTime,
+    this.notes,
+    this.status = 'pending',
+    this.source = 'direct',
+    this.confirmed = false,
+    required this.createdAt,
+    required this.updatedAt,
   });
 
-  void displayInfo() {
-    print("=== Thông tin Lịch hẹn ===");
-    print("ID: $id");
-    print("Bệnh nhân: $patientId");
-    print("Bác sĩ: $doctorId");
-    print("Ngày: $appointmentDate");
-    print("Lý do: $reason");
-    print("Trạng thái: $status");
-    if (note.isNotEmpty) print("Ghi chú: $note");
-  }
-  // Xác nhận lịch hẹn
-  void confirm() {
-    status = "Confirmed";
-  }
-
-  // Hoàn thành lịch hẹn
-  void complete() {
-    status = "Completed";
-  }
-
-  // Hủy lịch hẹn
-  void cancel() {
-    status = "Cancelled";
+  Map<String, dynamic> toMap() {
+    return {
+      'id': id,
+      'appointmentCode': appointmentCode,
+      'patientId': patientId,
+      'patientName': patientName,
+      'phone': phone,
+      'source': source,
+      'doctorId': doctorId,
+      'doctorName': doctorName,
+      'serviceId': serviceId,
+      'serviceName': serviceName,
+      'appointmentDate': appointmentDate.toIso8601String(),
+      'appointmentTime': appointmentTime,
+      'notes': notes,
+      'status': status,
+      'confirmed': confirmed,
+      'createdAt': createdAt.toIso8601String(),
+      'updatedAt': updatedAt.toIso8601String(),
+    };
   }
 
-  // Cập nhật ghi chú
-  void updateNote(String newNote) {
-    note = newNote;
+  factory Appointment.fromMap(Map<String, dynamic> map) {
+    return Appointment(
+      id: map['id'],
+      appointmentCode: map['appointmentCode'] ?? '',
+      patientId: map['patientId'],
+      patientName: map['patientName'],
+      phone: map['phone'],
+      source: map['source'] ?? map['registrationSource'] ?? 'direct',
+      doctorId: map['doctorId'],
+      doctorName: map['doctorName'],
+      serviceId: map['serviceId'],
+      serviceName: map['serviceName'],
+      appointmentDate: DateTime.parse(map['appointmentDate']),
+      appointmentTime: map['appointmentTime'],
+      notes: map['notes'],
+      status: map['status'] ?? 'pending',
+      confirmed: map['confirmed'] is int ? map['confirmed'] == 1 : (map['confirmed'] ?? false),
+      
+      createdAt: DateTime.parse(map['createdAt']),
+      updatedAt: DateTime.parse(map['updatedAt']),
+    );
   }
 
-  // Kiểm tra lịch hẹn đã quá thời gian chưa
-  bool isPast() {
-    return appointmentDate.isBefore(DateTime.now());
+  Appointment copyWith({
+    String? id,
+    String? appointmentCode,
+    String? patientId,
+    String? patientName,
+    String? phone,
+    String? source,
+    String? doctorId,
+    String? doctorName,
+    String? serviceId,
+    String? serviceName,
+    DateTime? appointmentDate,
+    String? appointmentTime,
+    String? notes,
+    String? status,
+    bool? confirmed,
+    DateTime? createdAt,
+    DateTime? updatedAt,
+  }) {
+    return Appointment(
+      id: id ?? this.id,
+      appointmentCode: appointmentCode ?? this.appointmentCode,
+      patientId: patientId ?? this.patientId,
+      patientName: patientName ?? this.patientName,
+      phone: phone ?? this.phone,
+      source: source ?? this.source,
+      doctorId: doctorId ?? this.doctorId,
+      doctorName: doctorName ?? this.doctorName,
+      serviceId: serviceId ?? this.serviceId,
+      serviceName: serviceName ?? this.serviceName,
+      appointmentDate: appointmentDate ?? this.appointmentDate,
+      appointmentTime: appointmentTime ?? this.appointmentTime,
+      notes: notes ?? this.notes,
+      status: status ?? this.status,
+      confirmed: confirmed ?? this.confirmed,
+      createdAt: createdAt ?? this.createdAt,
+      updatedAt: updatedAt ?? this.updatedAt,
+    );
+  }
+
+  String get statusDisplayName {
+    switch (status) {
+      case 'pending':
+        return 'Chờ xác nhận';
+      case 'confirmed':
+        return 'Đã xác nhận';
+      case 'scheduled':
+        return 'Đã đặt';
+      case 'in_progress':
+        return 'Đang khám';
+      case 'completed':
+        return 'Hoàn thành';
+      case 'cancelled':
+        return 'Đã hủy';
+      default:
+        return status;
+    }
+  }
+
+  String get sourceDisplayName {
+    switch (source) {
+      case 'admin':
+        return 'Quản trị viên';
+      case 'receptionist':
+        return 'Lễ tân';
+      case 'doctor':
+        return 'Bác sĩ';
+      case 'online':
+        return 'Online';
+      case 'direct':
+        return 'Trực tiếp';
+      case 'phone':
+        return 'Điện thoại';
+      case 'web':
+        return 'Website';
+      default:
+        return source;
+    }
   }
 }
