@@ -1,79 +1,93 @@
-import 'appointment.dart';
-
 class Patient {
-  String id;
+  final String id;
   String name;
-  String phone;
-  String email;
-  DateTime dateOfBirth;
+  String phoneNumber;
+  DateTime? dateOfBirth;
+  String? email;
+  String? gender;
+  String? address;
+  String? medicalHistory;
+  String? notes;
+  String? status; // 'active', 'completed', 'cancelled'
+  DateTime createdAt;
+  DateTime updatedAt;
 
   Patient({
     required this.id,
     required this.name,
-    required this.phone,
-    required this.email,
-    required this.dateOfBirth,
+    required this.phoneNumber,
+    this.dateOfBirth,
+    this.email,
+    this.gender,
+    this.address,
+    this.medicalHistory,
+    this.notes,
+    this.status = 'active',
+    required this.createdAt,
+    required this.updatedAt,
   });
 
-  void displayInfo() {
-    print("=== Thông tin Bệnh nhân ===");
-    print("ID: $id");
-    print("Tên: $name");
-    print("Tuổi: ${getAge()}");
-    print("Phone: $phone");
-    print("Email: $email");
+  Map<String, dynamic> toMap() {
+    return {
+      'id': id,
+      'name': name,
+      'phoneNumber': phoneNumber,
+      'email': email,
+      'dateOfBirth': dateOfBirth?.toIso8601String(),
+      'gender': gender,
+      'address': address,
+      'medicalHistory': medicalHistory,
+      'notes': notes,
+      'status': status,
+      'createdAt': createdAt.toIso8601String(),
+      'updatedAt': updatedAt.toIso8601String(),
+    };
   }
 
-  bool updateContact({String? newPhone, String? newEmail}) {
-    if (newPhone != null && newPhone.isEmpty) {
-      print("Số điện thoại không hợp lệ.");
-      return false;
-    }
-    if (newEmail != null && !newEmail.contains('@')) {
-      print("Email không hợp lệ.");
-      return false;
-    }
-    if (newPhone != null) phone = newPhone;
-    if (newEmail != null) email = newEmail;
-    print("Cập nhật thông tin liên hệ thành công.");
-    return true;
+  factory Patient.fromMap(Map<String, dynamic> map) {
+    return Patient(
+      id: map['id'],
+      name: map['name'],
+      phoneNumber: map['phoneNumber'] ?? map['phone'] ?? '',
+      email: map['email'],
+      dateOfBirth: map['dateOfBirth'] != null ? DateTime.parse(map['dateOfBirth']) : null,
+      gender: map['gender'],
+      address: map['address'],
+      medicalHistory: map['medicalHistory'],
+      notes: map['notes'],
+      status: map['status'] ?? 'active',
+      createdAt: DateTime.parse(map['createdAt']),
+      updatedAt: DateTime.parse(map['updatedAt']),
+    );
   }
 
-  bool isAdult() {
-    return getAge() >= 18;
-  }
-
-  int getAge() {
-    DateTime today = DateTime.now();
-    int age = today.year - dateOfBirth.year;
-    // Kiểm tra xem đã qua sinh nhật trong năm nay chưa
-    if (today.month < dateOfBirth.month || 
-        (today.month == dateOfBirth.month && today.day < dateOfBirth.day)) {
-      age--;
-    }
-    return age;
-  }
-
-  // Gửi email mô phỏng cho bệnh nhân về lịch hẹn
-  void mail(Appointment appointment) {
-    if (appointment.patientId != id) {
-      print("Cảnh báo: appointment.patientId khác với patient.id.");
-    }
-
-    print("-- Gửi email tới: $email --");
-    final subject = "Thông báo lịch hẹn (#${appointment.id})";
-    final buffer = StringBuffer();
-    buffer.writeln("Chào $name,");
-    buffer.writeln("");
-    buffer.writeln("Bạn có lịch hẹn với bác sĩ ${appointment.doctorId} vào ${appointment.appointmentDate}.");
-    buffer.writeln("Lý do: ${appointment.reason}");
-    if (appointment.note.isNotEmpty) buffer.writeln("Ghi chú: ${appointment.note}");
-    buffer.writeln("");
-    buffer.writeln("Trạng thái: ${appointment.status}");
-    buffer.writeln("");
-    buffer.writeln("Trân trọng,\nPhòng khám");
-
-    print("Subject: $subject");
-    print("Body:\n${buffer.toString()}");
+  Patient copyWith({
+    String? id,
+    String? name,
+    String? phoneNumber,
+    String? email,
+    DateTime? dateOfBirth,
+    String? gender,
+    String? address,
+    String? medicalHistory,
+    String? notes,
+    String? status,
+    DateTime? createdAt,
+    DateTime? updatedAt,
+  }) {
+    return Patient(
+      id: id ?? this.id,
+      name: name ?? this.name,
+      phoneNumber: phoneNumber ?? this.phoneNumber,
+      email: email ?? this.email,
+      dateOfBirth: dateOfBirth ?? this.dateOfBirth,
+      gender: gender ?? this.gender,
+      address: address ?? this.address,
+      medicalHistory: medicalHistory ?? this.medicalHistory,
+      notes: notes ?? this.notes,
+      status: status ?? this.status,
+      createdAt: createdAt ?? this.createdAt,
+      updatedAt: updatedAt ?? this.updatedAt,
+    );
   }
 }
